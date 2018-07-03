@@ -76,7 +76,7 @@ public class LoginActivity extends AppCompatActivity {
 
         @Override
         public void onError(FacebookException exception) {
-            Toast.makeText(LoginActivity.this, "some error", Toast.LENGTH_LONG);
+            Toast.makeText(LoginActivity.this, "some error", Toast.LENGTH_LONG).show();
         }
     };
 
@@ -88,7 +88,13 @@ public class LoginActivity extends AppCompatActivity {
     private OnClickListener mLoginClickListener = new OnClickListener() {
         @Override
         public void onClick(View view) {
-
+            if(!mEmailView.getText().toString().equals("") &&
+                    !mPasswordView.getText().toString().equals("")) {
+                navigateToHomePage();
+            }
+            else {
+                Toast.makeText(LoginActivity.this, "please enter username and password", Toast.LENGTH_LONG).show();
+            }
         }
     };
 }

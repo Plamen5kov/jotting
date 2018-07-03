@@ -15,6 +15,9 @@ public class Note implements Serializable {
     public Note(String title) {
         this.title = title;
     }
+    public Note(String title, String content) {
+        this.title = title; this.content = content;
+    }
 
     public Long getId() {
         return id;

@@ -29,8 +29,8 @@ public class CreateActivity extends AppCompatActivity {
                 Note note = new Note();
                 note .setTitle(title.getText().toString());
                 note .setContent(content.getText().toString());
-
-                //TODO: add request to db with note
+                Repository.getInstance().addNote(note);
+                startActivity(new Intent(CreateActivity.this, HomePageActivity.class));
             }
         });
         discard.setOnClickListener(new View.OnClickListener() {

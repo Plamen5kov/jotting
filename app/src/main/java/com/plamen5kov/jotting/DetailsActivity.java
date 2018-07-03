@@ -15,25 +15,29 @@ public class DetailsActivity  extends AppCompatActivity {
     private EditText title;
     private EditText content;
     private Button save;
-    private Button discard;
+    private Button delete;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.details_page);
-        Note note = (Note)getIntent().getSerializableExtra(SERIALIZED_NOTE_KEY);
+        final Note note = (Note)getIntent().getSerializableExtra(SERIALIZED_NOTE_KEY);
         title = findViewById(R.id.details_title);
         content = findViewById(R.id.details_content);
         save = findViewById(R.id.btn_details_save);
-        discard = findViewById(R.id.btn_details_discard);
+        delete = findViewById(R.id.btn_details_delete);
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //TODO: add request to db
+                note.setTitle(title.getText().toString());
+                note.setContent(content.getText().toString());
+                Repository.getInstance().editNote(note, note.getIndex());
+                startActivity(new Intent(DetailsActivity.this, HomePageActivity.class));
             }
         });
-        discard.setOnClickListener(new View.OnClickListener() {
+        delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Repository.getInstance().deleteNote(note.getIndex());
                 startActivity(new Intent(DetailsActivity.this, HomePageActivity.class));
             }
         });

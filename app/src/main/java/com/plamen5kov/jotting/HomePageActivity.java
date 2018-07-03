@@ -42,14 +42,7 @@ public class HomePageActivity extends AppCompatActivity implements RecyclerViewC
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         //adapter
-//        String[] data = {"asda", "asdasd", "asdasd"};
-        List<Note> data = new ArrayList<>();
-        data.add(new Note("111"));
-        data.add(new Note("2222"));
-        data.add(new Note("3333"));
-        data.add(new Note("4444"));
-
-        mAdapter = new NotesAdapter(data, this);
+        mAdapter = new NotesAdapter(Repository.getInstance().getAllNotes(), this);
         mRecyclerView.setAdapter(mAdapter);
     }
 

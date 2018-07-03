@@ -7,6 +7,7 @@
     <string name="action_sign_in">Sign in or register</string>
     <string name="Save">Save</string>
     <string name="Discard">Discard</string>
+    <string name="Delete">Delete</string>
     <string name="Title">Title</string>
     <string name="Content">Content</string>
     <string name="action_sign_in_short">Sign in</string>

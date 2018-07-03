@@ -40,14 +40,14 @@
         android:layout_marginTop="16dp"
         android:text="@string/Save"
         android:textStyle="bold"
-        android:layout_above="@id/btn_details_discard"/>
+        android:layout_above="@id/btn_details_delete"/>
     <Button
-        android:id="@+id/btn_details_discard"
+        android:id="@+id/btn_details_delete"
         style="?android:textAppearanceSmall"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="@string/Discard"
+        android:text="@string/Delete"
         android:textStyle="bold"
         android:layout_alignParentBottom="true"/>
 </RelativeLayout>

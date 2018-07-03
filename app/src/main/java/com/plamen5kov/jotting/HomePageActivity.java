@@ -53,13 +53,21 @@ public class HomePageActivity extends AppCompatActivity implements RecyclerViewC
         mRecyclerView.setAdapter(mAdapter);
     }
 
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
-        LoginManager.getInstance().logOut();
-        Intent myIntent = new Intent(getApplicationContext(),LoginActivity.class);
-        startActivity(myIntent);
-        return true;
+        int currentId = item.getItemId();
+        switch (currentId) {
+            case R.id.action_logout:
+                LoginManager.getInstance().logOut();
+                Intent myIntent = new Intent(getApplicationContext(),LoginActivity.class);
+                startActivity(myIntent);
+                break;
+            case R.id.action_add:
+                startActivity(new Intent(getApplicationContext(),CreateActivity.class));
+                break;
+                default: break;
+        }
+        return false;
     }
 
     @Override

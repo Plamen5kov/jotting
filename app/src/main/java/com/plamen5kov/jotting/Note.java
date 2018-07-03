@@ -11,6 +11,7 @@ public class Note implements Serializable {
     private String title;
     private String content;
 
+    public Note() {}
     public Note(String title) {
         this.title = title;
     }

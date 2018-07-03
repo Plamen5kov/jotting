@@ -6,4 +6,8 @@
         android:id="@+id/action_logout"
         android:title="logout"
         app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/action_add"
+        android:title="add"
+        app:showAsAction="ifRoom"/>
 </menu>

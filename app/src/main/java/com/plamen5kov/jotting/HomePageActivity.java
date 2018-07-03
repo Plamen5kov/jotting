@@ -19,6 +19,8 @@ import com.facebook.login.LoginManager;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.plamen5kov.jotting.Contants.SERIALIZED_NOTE_KEY;
+
 public class HomePageActivity extends AppCompatActivity implements RecyclerViewClickListener {
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
@@ -69,6 +71,8 @@ public class HomePageActivity extends AppCompatActivity implements RecyclerViewC
 
     @Override
     public void onItemClick(Note item) {
-        //TODO: implement details page ...
+        Intent detailsIntent = new Intent(this, DetailsActivity.class);
+        detailsIntent.putExtra(SERIALIZED_NOTE_KEY, item);
+        startActivity(detailsIntent);
     }
 }

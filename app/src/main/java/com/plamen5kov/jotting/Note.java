@@ -2,7 +2,9 @@ package com.plamen5kov.jotting;
 
 import android.content.Intent;
 
-public class Note {
+import java.io.Serializable;
+
+public class Note implements Serializable {
 
     private Long id;
     private Integer index;
@@ -12,7 +14,6 @@ public class Note {
     public Note(String title) {
         this.title = title;
     }
-
 
     public Long getId() {
         return id;
